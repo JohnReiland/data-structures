@@ -2,9 +2,8 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not to reference your old code in writing the new style.
   var someInstance = {};
+  someInstance.storage = {};
 
-  // var storage = {};
-  // Object.assign(storage, stackMethods)
   _.extend(someInstance, stackMethods);
 
   return someInstance;
@@ -12,7 +11,6 @@ var Stack = function() {
 };
 
 var stackMethods = {
-storage: {},
 push: function(value) {
   var storageKeys = Object.keys(this.storage);
   if (storageKeys.length === 0) {
