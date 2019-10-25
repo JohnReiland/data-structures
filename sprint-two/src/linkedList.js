@@ -84,7 +84,6 @@ var LinkedList = function() {
     }
   };
 
-
   return list;
 };
 

@@ -1,7 +1,7 @@
 var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
-
+  _.extend(newTree, treeMethods);
   // your code here
   newTree.children = null;  // fix me
 
@@ -11,9 +11,26 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  if (this.children === null){
+    this.children=[]
+  }
+  var newChild = Tree(value);
+  this.children.push(newChild);
 };
 
 treeMethods.contains = function(target) {
+  if (this.value === target) {
+    return true;
+  }
+  if (this.children === null){
+    return false;
+  }
+  for (var i = 0; i < this.children.length; i++) {
+    if (this.children[i].contains(target)) {
+      return true;
+    }
+  }
+  return false;
 };
 
 

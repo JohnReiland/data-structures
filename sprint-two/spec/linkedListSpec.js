@@ -161,7 +161,7 @@ describe('linkedList', function() {
     expect(linkedList.removeNthNode(2)).to.equal(5);
   });
 
-  it('should return the value of the nth node when nthNode.value is called', function() {
+  it('should return the value of the nth node when nthNode(n).value is called', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     linkedList.addToTail(6);
