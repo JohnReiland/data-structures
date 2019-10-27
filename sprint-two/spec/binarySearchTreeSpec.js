@@ -37,4 +37,8 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should squawk if insert is called with non-number value', function() {
+  expect(binarySearchTree.insert("We're DONE!")).to.eql("What??!");
+  });
 });

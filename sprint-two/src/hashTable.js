@@ -46,17 +46,23 @@ HashTable.prototype.remove = function(k) {
   if (Array.isArray(container)) {
     for (var i = 0; i < container.length; i++) {
       if (container[i][0] === k) {
+        var removedValue = container[i][1];
         container.splice(i,1);
       }
     }
   }
   this._storage.set(index, container);
+  return removedValue;
 };
+
+
 
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
+// .insert is constant ----- (O)1
+// .retrieve is constant --- (O)1
+// .remove is constant ----- (O)1
 

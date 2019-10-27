@@ -11,11 +11,15 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  if (value === null){
+    return false;
+  }
   if (this.children === null){
     this.children=[]
   }
   var newChild = Tree(value);
   this.children.push(newChild);
+  return true;
 };
 
 treeMethods.contains = function(target) {
@@ -38,3 +42,5 @@ treeMethods.contains = function(target) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+// .addChild is constant (O)1
+// .contains is linear  (O)n

@@ -24,4 +24,16 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+
+  it('should add first element of array if add is called with an array', function() {
+    set.add(["Amer","John"]);
+    expect(set.contains('Amer')).to.equal(true);
+    expect(set.contains('John')).to.equal(false);
+  });
+
+    // it('', function() {
+  //   set.method();
+  //   expect().to.equal();
+  // });
+
 });

@@ -9,6 +9,9 @@ var BinarySearchTree = function(value) {
 var newTreeMethods = {}
 
 newTreeMethods.insert = function(value){
+  if (typeof value!=='number'){
+    return "What??!";
+  }
   if (value === this.value) { return };
 
   if (value > this.value){
@@ -57,3 +60,6 @@ newTreeMethods.depthFirstLog = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+// .insert is linear ---- (O)n
+// .contains is linear -- (O)n
+// .depthFirstLog is ---- (O)n

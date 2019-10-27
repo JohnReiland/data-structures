@@ -26,6 +26,7 @@ Graph.prototype.removeNode = function(node) {
     this.removeEdge(node,this.graphList[node][i]);
   }
   delete this.graphList[node];
+  return node;
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
@@ -60,6 +61,14 @@ Graph.prototype.forEachNode = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+// .add is constant ------- (O)1
+// .contains is linear ---- (O)n
+// .removeNode is linear -- (O)n
+// .hasEdge is linear ----- (O)n
+// .addEdge is constant --- (O)1
+// .removeEdge ------------ (O)n
+// .forEachNode is linear - (O)n
+
 
 
 var ourFunnyGraph = new Graph();

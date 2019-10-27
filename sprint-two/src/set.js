@@ -7,7 +7,11 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  this._storage[item] = undefined;
+  var input = item;
+  if (Array.isArray(input)){
+    var input = input[0];
+  }
+  this._storage[input] = undefined;
  };
 
 setPrototype.contains = function(item) {
@@ -21,3 +25,6 @@ setPrototype.remove = function(item) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+// .add is constant -----(O)1
+// .contains is linear --(O)n
+// .remove is linear --- (O)n

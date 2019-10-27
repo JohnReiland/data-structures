@@ -41,4 +41,17 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should return true if addChild call is successful', function() {
+    expect(tree.addChild(5)).to.equal(true);
+  });
+
+  it('should return false if addChild is called with a null value', function() {
+    expect(tree.addChild(null)).to.equal(false);
+  });
+
+  // it('', function() {
+  //   tree.method();
+  //   expect().to.equal();
+  // });
+
 });
